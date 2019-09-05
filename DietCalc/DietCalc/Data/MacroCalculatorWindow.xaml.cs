@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DietCalc
+namespace DietCalc.Data
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy MacroCalculatorWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MacroCalculatorWindow : Window
     {
-        public MainWindow()
+        public MacroCalculatorWindow()
         {
             InitializeComponent();
-            
         }
     }
 }
