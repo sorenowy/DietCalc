@@ -1,0 +1,15 @@
+﻿<Window x:Class="DietCalc.Data.DietHistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DietCalc.Data"
+        mc:Ignorable="d"
+        Title="DietHistoryWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="316,368,0,0" VerticalAlignment="Top" Width="141" Height="41"/>
+        <TextBlock HorizontalAlignment="Left" Margin="69,33,0,0" TextWrapping="Wrap" Text="Last created diets with macro split" VerticalAlignment="Top" Height="54" Width="661"/>
+        <DataGrid HorizontalAlignment="Left" Height="235" Margin="57,108,0,0" VerticalAlignment="Top" Width="673" AlternatingRowBackground="AliceBlue" IsReadOnly="True" GridLinesVisibility="None"/>
+
+    </Grid>
+</Window>
