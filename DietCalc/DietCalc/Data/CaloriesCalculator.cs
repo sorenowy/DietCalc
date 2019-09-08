@@ -9,11 +9,11 @@ namespace DietCalc.Data
 {
     public class CaloriesCalculator
     {
-        private void CalculateBaseCal()
+        public void CalculateBaseCal()
         {
             LocalParameters.BMRAmount = (LocalParameters.heightVal*6.25) + (LocalParameters.weightVal*10) - (LocalParameters.ageVal * 4.92);
         }
-        private void CalculateDailyCal()
+        public void CalculateDailyCal()
         {
             LocalParameters.TDEEAmount = LocalParameters.BMRAmount * LocalParameters.exerciseFactor;
         }
@@ -56,6 +56,21 @@ namespace DietCalc.Data
             {
                 LocalParameters.exerciseFactor = 1.9;
                 CalculateDailyCal();
+            }
+        }
+        public void SelectTargetFactor(int option)
+        {
+            if (option == 0)
+            {
+                LocalParameters.targetFactor = LocalParameters.TDEEAmount * 0.1;
+            }
+            else if (option == 1)
+            {
+                LocalParameters.targetFactor = 0;
+            }
+            else
+            {
+                LocalParameters.targetFactor = LocalParameters.TDEEAmount * 0.15;
             }
         }
     }

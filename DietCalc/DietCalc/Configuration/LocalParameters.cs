@@ -25,5 +25,16 @@ namespace DietCalc.Configuration
         internal static double targetFactor { get; set; }
         internal static double BMRAmount { get; set; }
         internal static double TDEEAmount { get; set; }
+        internal static void RestoreParameters()
+        {
+            proteinAmount = 0;
+            carbsAmount = 0;
+            fatsAmount = 0;
+            ageVal = 0;
+            weightVal = 0;
+            heightVal = 0;
+            BMRAmount = 0;
+            TDEEAmount=0;
+        }
     }
 }

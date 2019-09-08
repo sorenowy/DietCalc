@@ -32,5 +32,11 @@ namespace DietCalc
             CaloriesCalculatorWindow calcWin = new CaloriesCalculatorWindow();
             calcWin.ShowDialog();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MacroCalculatorWindow macroWin = new MacroCalculatorWindow();
+            macroWin.ShowDialog();
+        }
     }
 }

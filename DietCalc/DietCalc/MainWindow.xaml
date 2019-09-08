@@ -30,7 +30,7 @@
                 </Style.Triggers>
             </Style>
         </Grid.Resources>
-        <Button Content="Oblicz Makro" HorizontalAlignment="Left" Margin="533,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}"/>
+        <Button Content="Oblicz Makro" HorizontalAlignment="Left" Margin="533,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="Button_Click_1"/>
         <Button Content="Oblicz kalorie" HorizontalAlignment="Left" Margin="91,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="Button_Click"/>
         <Button Content="Historia diet" HorizontalAlignment="Left" Margin="91,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}"/>
         <Button Content="Zamknij" HorizontalAlignment="Left" Margin="533,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}"/>

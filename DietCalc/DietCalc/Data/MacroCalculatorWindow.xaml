@@ -13,12 +13,12 @@
         <TextBlock HorizontalAlignment="Left" Margin="52,189,0,0" TextWrapping="Wrap" Text="Fats" VerticalAlignment="Top"/>
         <Button Content="Zapisz" HorizontalAlignment="Left" Margin="52,378,0,0" VerticalAlignment="Top" Width="90" Height="31"/>
         <Button Content="Wyjdź" HorizontalAlignment="Left" Margin="237,378,0,0" VerticalAlignment="Top" Width="90" Height="31"/>
-        <TextBox x:Name="txtBoxCal" HorizontalAlignment="Left" Height="23" Margin="161,46,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtBoxProtein" HorizontalAlignment="Left" Height="23" Margin="107,109,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="txtBoxCarbs" HorizontalAlignment="Left" Height="23" Margin="107,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="txtBoxFats" HorizontalAlignment="Left" Height="23" Margin="107,182,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="txtBoxCal" HorizontalAlignment="Left" Height="23" Margin="161,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox x:Name="txtBoxProtein" HorizontalAlignment="Left" Height="23" Margin="107,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="txtBoxCarbs" HorizontalAlignment="Left" Height="23" Margin="107,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="txtBoxFats" HorizontalAlignment="Left" Height="23" Margin="107,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55"/>
         <TextBlock HorizontalAlignment="Left" Margin="52,77,0,0" TextWrapping="Wrap" Text="Macro split" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbxSplitMacros" HorizontalAlignment="Left" Margin="142,77,0,0" VerticalAlignment="Top" Width="139"/>
+        <ComboBox x:Name="cbxSplitMacros" HorizontalAlignment="Left" Margin="142,77,0,0" VerticalAlignment="Top" Width="139" SelectionChanged="CbxSplitMacros_SelectionChanged"/>
         <Slider HorizontalAlignment="Left" Margin="190,114,0,0" VerticalAlignment="Top" Width="91"/>
         <Slider HorizontalAlignment="Left" Margin="190,151,0,0" VerticalAlignment="Top" Width="91"/>
         <Slider HorizontalAlignment="Left" Margin="190,187,0,0" VerticalAlignment="Top" Width="91"/>

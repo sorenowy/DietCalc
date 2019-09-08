@@ -16,16 +16,16 @@
         <TextBlock HorizontalAlignment="Left" Margin="52,273,0,0" TextWrapping="Wrap" Text="Cel diety" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="193,305,0,0" TextWrapping="Wrap" Text="BMR" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="193,341,0,0" TextWrapping="Wrap" Text="TDEE" VerticalAlignment="Top"/>
-        <Button Content="Zapisz" HorizontalAlignment="Left" Margin="52,378,0,0" VerticalAlignment="Top" Width="90" Height="31"/>
-        <Button Content="Wyjdź" HorizontalAlignment="Left" Margin="237,378,0,0" VerticalAlignment="Top" Width="90" Height="31"/>
+        <Button Content="Zapisz" HorizontalAlignment="Left" Margin="52,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="Button_Click"/>
+        <Button Content="Wyjdź" HorizontalAlignment="Left" Margin="237,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="Button_Click_1"/>
         <CheckBox Content="Tkanka" HorizontalAlignment="Left" Margin="269,234,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtboxWeight" HorizontalAlignment="Left" Height="23" Margin="144,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtboxWeight_TextChanged"/>
         <TextBox x:Name="txtboxHeight" HorizontalAlignment="Left" Height="23" Margin="144,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtboxHeight_TextChanged"/>
         <TextBox x:Name="txtboxBodyFat" HorizontalAlignment="Left" Height="23" Margin="144,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtboxBMR" HorizontalAlignment="Left" Height="23" Margin="247,298,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" IsReadOnly="True"/>
         <TextBox x:Name="txtboxTDEE" HorizontalAlignment="Left" Height="23" Margin="247,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" IsReadOnly="True"/>
-        <ComboBox x:Name="cbxActivity" HorizontalAlignment="Left" Margin="144,189,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cbxDiet" HorizontalAlignment="Left" Margin="144,271,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxActivity" HorizontalAlignment="Left" Margin="144,189,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxActivity_SelectionChanged"/>
+        <ComboBox x:Name="cbxDiet" HorizontalAlignment="Left" Margin="144,271,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxDiet_SelectionChanged"/>
         <ComboBox x:Name="cbxSex" HorizontalAlignment="Left" Margin="144,89,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxSex_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="52,89,0,0" TextWrapping="Wrap" Text="Płeć" VerticalAlignment="Top"/>
 
