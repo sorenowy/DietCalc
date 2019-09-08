@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DietCalc.Configuration;
+using DietCalc.Data;
 
 namespace DietCalc
 {
@@ -24,6 +26,11 @@ namespace DietCalc
         {
             InitializeComponent();
             
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CaloriesCalculatorWindow calcWin = new CaloriesCalculatorWindow();
+            calcWin.ShowDialog();
         }
     }
 }
