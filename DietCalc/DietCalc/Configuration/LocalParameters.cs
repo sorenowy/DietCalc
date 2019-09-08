@@ -12,7 +12,7 @@ namespace DietCalc.Configuration
         internal static string DBPath = "Data Source=" + Environment.CurrentDirectory + @"\Connection\DietDatabase.db";
         internal static double maleFactor = 5;
         internal static double femaleFactor = -161;
-
+        internal static string localSelectQuery = "SelectAll";
         internal static double proteinAmount { get; set; }
         internal static double carbsAmount { get; set; }
         internal static double fatsAmount { get; set; }

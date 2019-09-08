@@ -8,11 +8,15 @@ using DietCalc.Configuration;
 
 namespace DietCalc.Connection
 {
-    public class SQLiteConnection
+    public class LocalConnection
     {
         public void InitializeConnection()
         {
+            using (var connection = new SQLiteConnection())
+            using (var sqladapter = new SQLiteDataAdapter(LocalParameters.localSelectQuery, connection))
+            {
 
+            }
         }
     }
 }

@@ -110,7 +110,7 @@
     </Compile>
     <Compile Include="Configuration\LocalParameters.cs" />
     <Compile Include="Configuration\MenuParameters.cs" />
-    <Compile Include="Connection\SQLiteConnection.cs" />
+    <Compile Include="Connection\LocalConnection.cs" />
     <Compile Include="Data\CaloriesCalculator.cs" />
     <Compile Include="Data\CaloriesCalculatorWindow.xaml.cs">
       <DependentUpon>CaloriesCalculatorWindow.xaml</DependentUpon>
