@@ -12,6 +12,7 @@ namespace DietCalc.Connection
     {
         public void InitializeConnection()
         {
+
         }
     }
 }
