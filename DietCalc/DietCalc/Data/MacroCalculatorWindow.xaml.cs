@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DietCalc.Configuration;
+using DietCalc.Connection;
 
 namespace DietCalc.Data
 {
@@ -22,6 +23,7 @@ namespace DietCalc.Data
     {
         private string _dietType;
         MacroCalculator macroCalc = new MacroCalculator();
+        LocalConnection localCon = new LocalConnection();
         public MacroCalculatorWindow()
         {
             InitializeComponent();
@@ -50,6 +52,13 @@ namespace DietCalc.Data
                 case "Ketogenic 20%P/5%C/75%F":
                     goto case "Recommended 30%P/40%C/30%F";
             }
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            LocalParameters.username = txtBoxName.Text;
+            localCon.LocalAddRecord();
+            LocalParameters.RestoreParameters();
         }
     }
 }

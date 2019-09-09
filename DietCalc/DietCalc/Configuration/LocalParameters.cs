@@ -8,11 +8,13 @@ namespace DietCalc.Configuration
 {
     internal static class LocalParameters
     {
+        internal static string username { get; set; }
         internal static string logPath = Environment.CurrentDirectory + @"\Logs\ProgramLog";
         internal static string DBPath = "Data Source=" + Environment.CurrentDirectory + @"\Connection\DietDatabase.db";
         internal static double maleFactor = 5;
         internal static double femaleFactor = -161;
-        internal static string localSelectQuery = "SelectAll";
+        internal static string localSelectQuery = "SELECT Name AS [Person Name],Bmr AS [BMR Calories], Tdee AS [TDEE Calories], Protein AS [Protein (g)], Carbs AS [Carbs (g)],Fats AS [Fats (g)], DateT as [Date of creation] FROM DietTable";
+        internal static string localInsertQuery = "INSERT INTO DietTable (Name,Bmr,Tdee,Protein,Carbs,Fats,DateT) VALUES (@Name,@Bmr,@Tdee,@Protein,@Carbs,@Fats,@DateT)";
         internal static double proteinAmount { get; set; }
         internal static double carbsAmount { get; set; }
         internal static double fatsAmount { get; set; }
@@ -35,6 +37,7 @@ namespace DietCalc.Configuration
             heightVal = 0;
             BMRAmount = 0;
             TDEEAmount=0;
+            username=string.Empty;
         }
     }
 }

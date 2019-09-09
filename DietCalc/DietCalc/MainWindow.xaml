@@ -32,8 +32,8 @@
         </Grid.Resources>
         <Button Content="Oblicz Makro" HorizontalAlignment="Left" Margin="533,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="Button_Click_1"/>
         <Button Content="Oblicz kalorie" HorizontalAlignment="Left" Margin="91,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="Button_Click"/>
-        <Button Content="Historia diet" HorizontalAlignment="Left" Margin="91,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}"/>
-        <Button Content="Zamknij" HorizontalAlignment="Left" Margin="533,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}"/>
+        <Button Content="Historia diet" HorizontalAlignment="Left" Margin="91,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="Button_Click_2"/>
+        <Button Content="Zamknij" HorizontalAlignment="Left" Margin="533,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="Button_Click_3"/>
         <TextBlock HorizontalAlignment="Left" Margin="91,54,0,0" TextWrapping="Wrap" Text="DietCalc wersja 2019" VerticalAlignment="Top" Height="109" Width="602" FontSize="40" FontWeight="DemiBold" FontFamily="Cambria" TextAlignment="Center"/>
 
     </Grid>

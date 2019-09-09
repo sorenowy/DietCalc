@@ -7,9 +7,8 @@
         mc:Ignorable="d"
         Title="DietHistoryWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Close" HorizontalAlignment="Left" Margin="316,368,0,0" VerticalAlignment="Top" Width="141" Height="41"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="316,368,0,0" VerticalAlignment="Top" Width="141" Height="41" Click="buttonClose_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="69,33,0,0" TextWrapping="Wrap" Text="Last created diets with macro split" VerticalAlignment="Top" Height="54" Width="661"/>
-        <DataGrid HorizontalAlignment="Left" Height="235" Margin="57,108,0,0" VerticalAlignment="Top" Width="673" AlternatingRowBackground="AliceBlue" IsReadOnly="True" GridLinesVisibility="None"/>
-
+        <DataGrid x:Name="gridTable" HorizontalAlignment="Left" Height="235" Margin="57,108,0,0" VerticalAlignment="Top" Width="673" AlternatingRowBackground="AliceBlue" IsReadOnly="True" GridLinesVisibility="None"/>
     </Grid>
 </Window>

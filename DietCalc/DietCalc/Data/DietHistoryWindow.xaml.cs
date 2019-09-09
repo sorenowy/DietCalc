@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DietCalc.Configuration;
+using DietCalc.Connection;
 
 namespace DietCalc.Data
 {
@@ -22,6 +24,14 @@ namespace DietCalc.Data
         public DietHistoryWindow()
         {
             InitializeComponent();
+            gridTable.ItemsSource = MenuParameters.dietList.DefaultView;
+        }
+
+        private void buttonClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MenuParameters.dietList.Clear();
+            gridTable.ItemsSource = null;
         }
     }
 }
