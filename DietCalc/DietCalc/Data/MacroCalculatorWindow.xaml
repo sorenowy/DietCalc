@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:DietCalc.Data"
         mc:Ignorable="d"
         Title="MacroCalculatorWindow" Height="450" Width="368.802">
+    <Window.Resources>
+        <Style x:Key="stylTextBlock" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Cambria"/>
+        </Style>
+    </Window.Resources>
     <Window.Background>
         <LinearGradientBrush>
             <GradientStop Color="LightCoral" Offset="0.0"/>
@@ -29,24 +36,30 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
+            <Style x:Key="stylTextBlock" TargetType="{x:Type TextBlock}">
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="Cambria"/>
+            </Style>
         </Grid.Resources>
-        <TextBlock HorizontalAlignment="Left" Margin="52,46,0,0" TextWrapping="Wrap" Text="TDEE Calories" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,116,0,0" TextWrapping="Wrap" Text="Protein" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,151,0,0" TextWrapping="Wrap" Text="Carbs" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,189,0,0" TextWrapping="Wrap" Text="Fats" VerticalAlignment="Top"/>
-        <Button Content="Zapisz" HorizontalAlignment="Left" Margin="52,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="buttonSave_Click" Style="{StaticResource stylKlawiszy}"/>
-        <Button Content="Wyjdź" HorizontalAlignment="Left" Margin="237,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="buttonExit_Click" Style="{StaticResource stylKlawiszy}"/>
-        <TextBox x:Name="txtBoxCal" HorizontalAlignment="Left" Height="23" Margin="161,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <TextBox x:Name="txtBoxProtein" HorizontalAlignment="Left" Height="23" Margin="107,109,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderProtein, Path=Value}" VerticalAlignment="Top" Width="55" IsReadOnly="True"/>
-        <TextBox x:Name="txtBoxCarbs" HorizontalAlignment="Left" Height="23" Margin="107,144,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderCarbs, Path=Value}" VerticalAlignment="Top" Width="55" IsReadOnly="True"/>
-        <TextBox x:Name="txtBoxFats" HorizontalAlignment="Left" Height="23" Margin="107,182,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderFats, Path=Value}" VerticalAlignment="Top" Width="55" IsReadOnly="True"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,77,0,0" TextWrapping="Wrap" Text="Macro split" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,46,0,0" TextWrapping="Wrap" Text="TDEE Calories" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,116,0,0" TextWrapping="Wrap" Text="Protein" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,151,0,0" TextWrapping="Wrap" Text="Carbs" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,189,0,0" TextWrapping="Wrap" Text="Fats" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBox x:Name="txtBoxName" HorizontalAlignment="Left" Height="23" Margin="107,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="126" ToolTip="Input your name here." />
+        <Button Content="SAVE" HorizontalAlignment="Left" Margin="52,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="buttonSave_Click" Style="{StaticResource stylKlawiszy}" ToolTip="SAVE AND PRINT + EXPORT TO DATABASE"/>
+        <Button Content="EXIT" HorizontalAlignment="Left" Margin="237,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="buttonExit_Click" Style="{StaticResource stylKlawiszy}" ToolTip="EXIT THE WINDOW"/>
+        <TextBox x:Name="txtBoxCal" HorizontalAlignment="Left" Height="23" Margin="161,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True" ToolTip="Amount of calories estimated earlier"/>
+        <TextBox x:Name="txtBoxProtein" HorizontalAlignment="Left" Height="23" Margin="107,109,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderProtein, Path=Value}" VerticalAlignment="Top" Width="55" IsReadOnly="True" ToolTip="Amount of protein in grams"/>
+        <TextBox x:Name="txtBoxCarbs" HorizontalAlignment="Left" Height="23" Margin="107,144,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderCarbs, Path=Value}" VerticalAlignment="Top" Width="55" IsReadOnly="True" ToolTip="Amount of carbohydrates in grams"/>
+        <TextBox x:Name="txtBoxFats" HorizontalAlignment="Left" Height="23" Margin="107,182,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderFats, Path=Value}" VerticalAlignment="Top" Width="55" IsReadOnly="True" ToolTip="Amount of fats in grams"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,77,0,0" TextWrapping="Wrap" Text="Macro split" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
         <ComboBox x:Name="cbxSplitMacros" HorizontalAlignment="Left" Margin="142,77,0,0" VerticalAlignment="Top" Width="139" SelectionChanged="CbxSplitMacros_SelectionChanged"/>
         <Slider x:Name="sliderProtein" HorizontalAlignment="Left" Margin="190,114,0,0" VerticalAlignment="Top" Width="91" Maximum="500" ValueChanged="SliderProtein_ValueChanged"/>
         <Slider x:Name="sliderCarbs" HorizontalAlignment="Left" Margin="190,151,0,0" VerticalAlignment="Top" Width="91" Maximum="500" ValueChanged="SliderCarbs_ValueChanged"/>
         <Slider x:Name="sliderFats" HorizontalAlignment="Left" Margin="190,187,0,0" VerticalAlignment="Top" Width="91" Maximum="500" ValueChanged="SliderFats_ValueChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,217,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtBoxName" HorizontalAlignment="Left" Height="23" Margin="107,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="126"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,217,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
         <TextBox x:Name="txtBoxPercent"  HorizontalAlignment="Left" Height="23" Margin="303,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48"/>
+        <TextBlock HorizontalAlignment="Left" Margin="303,123,0,0" TextWrapping="Wrap" Text="Percent" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
     </Grid>
 </Window>

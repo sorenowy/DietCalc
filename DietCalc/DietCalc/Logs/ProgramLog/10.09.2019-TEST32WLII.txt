@@ -140,3 +140,19 @@
 10.09.2019,14:26:31,Loaded Custom, to calculation
 
 10.09.2019,14:26:53,Opened the macros calculator window.
+
+10.09.2019,14:53:08,Program initialized successfully
+
+10.09.2019,14:58:38,Program initialized successfully
+
+10.09.2019,14:58:45,Restored parameters
+
+10.09.2019,14:58:45,Opened the macros calculator window.
+
+10.09.2019,14:59:16,Program initialized successfully
+
+10.09.2019,14:59:17,Loaded DataTable from SQL, to Grid
+
+10.09.2019,14:59:25,Opened the macros calculator window.
+
+10.09.2019,14:59:29,Opened the macros calculator window.

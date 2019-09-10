@@ -31,10 +31,10 @@
             </Style>
         </Grid.Resources>
         <Image x:Name="mainMenuImage" HorizontalAlignment="Left" Height="218" Margin="333,163,0,0" VerticalAlignment="Top" Width="137"/>
-        <Button Content="Oblicz kalorie" HorizontalAlignment="Left" Margin="91,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="buttonCaloriesCalc_Click"/>
-        <Button Content="Oblicz Makro" HorizontalAlignment="Left" Margin="533,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="buttonMacro_Click"/>
-        <Button Content="Historia diet" HorizontalAlignment="Left" Margin="91,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="buttonHistory_Click"/>
-        <Button Content="Zamknij" HorizontalAlignment="Left" Margin="533,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="buttonClose_Click"/>
+        <Button Content="CALCULATE CALORIES" HorizontalAlignment="Left" Margin="91,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="buttonCaloriesCalc_Click" ToolTip="ESTIMATE YOUR CALORIES"/>
+        <Button Content="CALCULATE MACROS" HorizontalAlignment="Left" Margin="533,232,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="buttonMacro_Click" ToolTip="ESTIMATE YOUR MACROS AFTER YOU ESTIMATE YOUR CALORIC INTAKE"/>
+        <Button Content="DIET HISTORY" HorizontalAlignment="Left" Margin="91,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="buttonHistory_Click" ToolTip="CHECK HISTORY OF DIETS"/>
+        <Button Content="CLOSE" HorizontalAlignment="Left" Margin="533,327,0,0" VerticalAlignment="Top" Width="160" Height="54" Style="{StaticResource stylKlawiszy}" Click="buttonClose_Click" ToolTip="CLOSE THIS PROGRAM"/>
         <TextBlock HorizontalAlignment="Left" Margin="91,54,0,0" TextWrapping="Wrap" Text="DietCalc wersja 2019" VerticalAlignment="Top" Height="109" Width="602" FontSize="40" FontWeight="DemiBold" FontFamily="Cambria" TextAlignment="Center"/>
     </Grid>
 </Window>

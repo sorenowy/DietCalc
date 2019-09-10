@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using DietCalc.Configuration;
 using DietCalc.Connection;
 using DietCalc.Logs;
+using DietCalc.Print;
 
 namespace DietCalc.Data
 {
@@ -87,21 +78,45 @@ namespace DietCalc.Data
         }
         private void SliderProtein_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            LocalParameters.proteinAmount = sliderProtein.Value;
-            macroCalc.Calculate();
-            txtBoxPercent.Text = Convert.ToString(Math.Round(LocalParameters.MacroPercentage, 1));
+            try
+            {
+                LocalParameters.proteinAmount = sliderProtein.Value;
+                macroCalc.Calculate();
+                txtBoxPercent.Text = Convert.ToString(Math.Round(LocalParameters.MacroPercentage, 1));
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show(h.Message);
+                LogWriter.LogWrite(h.ToString());
+            }
         }
         private void SliderCarbs_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            LocalParameters.carbsAmount = sliderCarbs.Value;
-            macroCalc.Calculate();
-            txtBoxPercent.Text = Convert.ToString(Math.Round(LocalParameters.MacroPercentage, 1));
+            try
+            {
+                LocalParameters.carbsAmount = sliderCarbs.Value;
+                macroCalc.Calculate();
+                txtBoxPercent.Text = Convert.ToString(Math.Round(LocalParameters.MacroPercentage, 1));
+            }
+            catch (Exception j)
+            {
+                MessageBox.Show(j.Message);
+                LogWriter.LogWrite(j.ToString());
+            }
         }
         private void SliderFats_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            LocalParameters.fatsAmount = sliderFats.Value;
-            macroCalc.Calculate();
-            txtBoxPercent.Text = Convert.ToString(Math.Round(LocalParameters.MacroPercentage, 1));
+            try
+            {
+                LocalParameters.fatsAmount = sliderFats.Value;
+                macroCalc.Calculate();
+                txtBoxPercent.Text = Convert.ToString(Math.Round(LocalParameters.MacroPercentage, 1));
+            }
+            catch (Exception i)
+            {
+                MessageBox.Show(i.Message);
+                LogWriter.LogWrite(i.ToString());
+            }
         }
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {

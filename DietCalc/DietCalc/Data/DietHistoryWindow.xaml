@@ -13,8 +13,25 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <Button Content="Close" HorizontalAlignment="Left" Margin="316,368,0,0" VerticalAlignment="Top" Width="141" Height="41" Click="buttonClose_Click"/>
+        <Grid.Resources>
+            <Style x:Key="stylKlawiszy" TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="Aquamarine"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="BorderBrush" Value="Azure"/>
+                <Setter Property="FontFamily" Value="Cambria"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Foreground" Value="Orange"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="BorderThickness" Value="4"/>
+                        <Setter Property="FontWeight" Value="DemiBold"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Button Content="CLOSE" HorizontalAlignment="Left" Margin="316,368,0,0" VerticalAlignment="Top" Width="141" Height="41" Click="buttonClose_Click" ToolTip="CLOSE THAT WINDOW" Style="{StaticResource stylKlawiszy}"/>
         <TextBlock HorizontalAlignment="Left" Margin="69,33,0,0" TextWrapping="Wrap" Text="Last created diets with macro split" FontWeight="DemiBold" FontSize="40" FontFamily="Cambria" TextAlignment="Center" VerticalAlignment="Top" Height="54" Width="661"/>
-        <DataGrid x:Name="gridTable" HorizontalAlignment="Left" Height="235" Margin="57,108,0,0" VerticalAlignment="Top" Width="673" AlternatingRowBackground="LightPink" IsReadOnly="True" GridLinesVisibility="None"/>
+        <DataGrid x:Name="gridTable" HorizontalAlignment="Left" Height="235" Margin="57,108,0,0" VerticalAlignment="Top" Width="673" AlternatingRowBackground="LightPink" IsReadOnly="True" GridLinesVisibility="None" ToolTip="Latest estimated diets"/>
     </Grid>
 </Window>

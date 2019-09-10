@@ -28,73 +28,106 @@ namespace DietCalc.Data
         CaloriesCalculator caloriesCalc = new CaloriesCalculator();
         public CaloriesCalculatorWindow()
         {
-            InitializeComponent();
-            cbxSex.Items.Add("Female");
-            cbxSex.Items.Add("Male");
-            cbxDiet.Items.Add("Bulk +10%");
-            cbxDiet.Items.Add("Maintain/Recompose +0%");
-            cbxDiet.Items.Add("Cut -15%");
-            cbxActivity.Items.Add("Sedentary");
-            cbxActivity.Items.Add("Light Activity 1-2days/week");
-            cbxActivity.Items.Add("Moderate Activity 3-5d/week");
-            cbxActivity.Items.Add("Heavy Activity 5d+/week");
-            cbxActivity.Items.Add("Athlete - 2x/day");
-            txtboxBodyFat.Visibility = Visibility.Hidden;
+            try
+            {
+                InitializeComponent();
+                cbxSex.Items.Add("Female");
+                cbxSex.Items.Add("Male");
+                cbxDiet.Items.Add("Bulk +10%");
+                cbxDiet.Items.Add("Maintain/Recompose +0%");
+                cbxDiet.Items.Add("Cut -15%");
+                cbxActivity.Items.Add("Sedentary");
+                cbxActivity.Items.Add("Light Activity 1-2days/week");
+                cbxActivity.Items.Add("Moderate Activity 3-5d/week");
+                cbxActivity.Items.Add("Heavy Activity 5d+/week");
+                cbxActivity.Items.Add("Athlete - 2x/day");
+                txtboxBodyFat.Visibility = Visibility.Hidden;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                LogWriter.LogWrite(e.ToString());
+            }
         }
 
         private void CbxSex_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _sexType = Convert.ToString(cbxSex.SelectedItem);
-            switch (_sexType)
+            try
             {
-                case "Male":
-                    caloriesCalc.SelectSexFactor(cbxSex.SelectedIndex);
-                    txtboxBMR.Text = Convert.ToString(Math.Round(LocalParameters.BMRAmount,2));
-                    break;
-                case "Female":
-                    goto case "Male";
+                switch (_sexType)
+                {
+                    case "Male":
+                        caloriesCalc.SelectSexFactor(cbxSex.SelectedIndex);
+                        txtboxBMR.Text = Convert.ToString(Math.Round(LocalParameters.BMRAmount, 2));
+                        break;
+                    case "Female":
+                        goto case "Male";
+                }
+                LogWriter.LogWrite($"Selected {_sexType}");
+            }
+            catch(Exception f)
+            {
+                MessageBox.Show(f.Message);
+                LogWriter.LogWrite(f.ToString());
             }
         }
         private void CbxActivity_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _activityType = Convert.ToString(cbxActivity.SelectedItem);
-            switch (_activityType)
+            try
             {
-                case "Sedentary":
-                    caloriesCalc.SelectActivityFactor(cbxActivity.SelectedIndex);
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    break;
-                case "Light Activity 1-2days/week":
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    goto case "Sedentary";
-                case "Moderate Activity 3-5d/week":
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    goto case "Sedentary";
-                case "Heavy Activity 5d+/week":
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    goto case "Sedentary";
-                case "Athlete - 2x/day":
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    goto case "Sedentary";
+                switch (_activityType)
+                {
+                    case "Sedentary":
+                        caloriesCalc.SelectActivityFactor(cbxActivity.SelectedIndex);
+                        txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                        break;
+                    case "Light Activity 1-2days/week":
+                        txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                        goto case "Sedentary";
+                    case "Moderate Activity 3-5d/week":
+                        txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                        goto case "Sedentary";
+                    case "Heavy Activity 5d+/week":
+                        txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                        goto case "Sedentary";
+                    case "Athlete - 2x/day":
+                        txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                        goto case "Sedentary";
+                }
+            }
+            catch (Exception g)
+            {
+                MessageBox.Show(g.Message);
+                LogWriter.LogWrite(g.ToString());
             }
         }
         private void CbxDiet_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _targetType = Convert.ToString(cbxDiet.SelectedItem);
-            switch (_targetType)
+            try
             {
-                case "Bulk +10%":
-                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount + LocalParameters.targetFactor, 2));
-                    break;
-                case "Maintain/Recompose +0%":
-                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount + LocalParameters.targetFactor, 2));
-                    break;
-                case "Cut -15%":
-                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount - LocalParameters.targetFactor, 2));
-                    break;
+                switch (_targetType)
+                {
+                    case "Bulk +10%":
+                        caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
+                        txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount + LocalParameters.targetFactor, 2));
+                        break;
+                    case "Maintain/Recompose +0%":
+                        caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
+                        txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount + LocalParameters.targetFactor, 2));
+                        break;
+                    case "Cut -15%":
+                        caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
+                        txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount - LocalParameters.targetFactor, 2));
+                        break;
+                }
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show(h.Message);
+                LogWriter.LogWrite(h.ToString());
             }
         }
         private void TxtboxAge_TextChanged(object sender, TextChangedEventArgs e)
@@ -103,7 +136,7 @@ namespace DietCalc.Data
             {
                 if (txtboxAge.Text == string.Empty)
                 {
-                    MessageBox.Show("Wprowadź wiek w celu policzenia!");
+                    MessageBox.Show("Please write your age in number to estimate calories!");
                 }
                 else
                 {
@@ -121,9 +154,9 @@ namespace DietCalc.Data
                     txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount,2));
                 }
             }
-            catch (Exception d)
+            catch (Exception)
             {
-                MessageBox.Show(d.Message);
+                MessageBox.Show("Please use numeric values to estimate CALORIES!");
             }
         }
         private void TxtboxWeight_TextChanged(object sender, TextChangedEventArgs e)
@@ -132,7 +165,7 @@ namespace DietCalc.Data
             {
                 if (txtboxWeight.Text == string.Empty)
                 {
-                    MessageBox.Show("Wprowadź wagę w celu policzenia!");
+                    MessageBox.Show("Input your weight in kilograms to estimate your calories intake");
                 }
                 else
                 {
@@ -150,9 +183,9 @@ namespace DietCalc.Data
                     txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount,2));
                 }
             }
-            catch (Exception f)
+            catch (Exception)
             {
-                MessageBox.Show(f.Message);
+                MessageBox.Show("Please use numeric values to estimate CALORIES!");
             }
         }
 
@@ -162,7 +195,7 @@ namespace DietCalc.Data
             {
                 if (txtboxHeight.Text == string.Empty)
                 {
-                    MessageBox.Show("Wprowadź wzrost w celu policzenia!");
+                    MessageBox.Show("Please input your height in centimeters to estimate CALORIES");
                 }
                 else
                 {
@@ -180,9 +213,9 @@ namespace DietCalc.Data
                     txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount,2));
                 }
             }
-            catch (Exception g)
+            catch (Exception)
             {
-                MessageBox.Show(g.Message);
+                MessageBox.Show("Please use numeric values to estimate CALORIES!");
             }
         }
         private void buttonSave_Click(object sender, RoutedEventArgs e)
@@ -196,6 +229,7 @@ namespace DietCalc.Data
             {
                 LocalParameters.TDEEAmount -= LocalParameters.targetFactor;
             }
+            LogWriter.LogWrite("Added calories to memory");
         }
 
         private void buttonExit_Click(object sender, RoutedEventArgs e)

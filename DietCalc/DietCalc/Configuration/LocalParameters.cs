@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DietCalc.Logs;
 
 namespace DietCalc.Configuration
 {
@@ -39,6 +40,7 @@ namespace DietCalc.Configuration
             BMRAmount = 0;
             TDEEAmount=0;
             username=string.Empty;
+            LogWriter.LogWrite("Restored parameters");
         }
     }
 }

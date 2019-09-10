@@ -13,26 +13,48 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <TextBox x:Name="txtboxAge"  HorizontalAlignment="Left" Height="23" Margin="144,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtboxAge_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,46,0,0" TextWrapping="Wrap" Text="Wiek" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,116,0,0" TextWrapping="Wrap" Text="Waga" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,151,0,0" TextWrapping="Wrap" Text="Wzrost" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,189,0,0" TextWrapping="Wrap" Text="Aktywność" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="41,233,0,0" TextWrapping="Wrap" Text="Tkanka tłuszczowa" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,273,0,0" TextWrapping="Wrap" Text="Cel diety" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="193,305,0,0" TextWrapping="Wrap" Text="BMR" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="193,341,0,0" TextWrapping="Wrap" Text="TDEE" VerticalAlignment="Top"/>
-        <Button Content="Zapisz" HorizontalAlignment="Left" Margin="52,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="buttonSave_Click"/>
-        <Button Content="Wyjdź" HorizontalAlignment="Left" Margin="237,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="buttonExit_Click"/>
+        <Grid.Resources>
+                <Style x:Key="stylKlawiszy" TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Aquamarine"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="BorderBrush" Value="Azure"/>
+                    <Setter Property="FontFamily" Value="Cambria"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="Orange"/>
+                            <Setter Property="FontSize" Value="16"/>
+                            <Setter Property="BorderThickness" Value="4"/>
+                            <Setter Property="FontWeight" Value="DemiBold"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            <Style x:Key="stylTextBlock" TargetType="{x:Type TextBlock}">
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="Cambria"/>
+            </Style>
+            </Grid.Resources>
+            <TextBox x:Name="txtboxAge"  HorizontalAlignment="Left" Height="23" Margin="144,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtboxAge_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,46,0,0" TextWrapping="Wrap" Text="AGE" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,89,0,0" TextWrapping="Wrap" Text="SEX" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,116,0,0" TextWrapping="Wrap" Text="WEIGHT (kg)" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,151,0,0" TextWrapping="Wrap" Text="HEIGHT (cm)" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,189,0,0" TextWrapping="Wrap" Text="ACTIVITY LEVEL" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,233,0,0" TextWrapping="Wrap" Text="BODYFAT PERCENT" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="52,273,0,0" TextWrapping="Wrap" Text="YOUR TARGET?" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="193,305,0,0" TextWrapping="Wrap" Text="BMR" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="193,341,0,0" TextWrapping="Wrap" Text="TDEE" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <Button Content="SAVE" HorizontalAlignment="Left" Margin="52,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="buttonSave_Click" ToolTip="SAVE YOUR CALORIE INTAKE" Style="{StaticResource stylKlawiszy}"/>
+        <Button Content="EXIT" HorizontalAlignment="Left" Margin="237,378,0,0" VerticalAlignment="Top" Width="90" Height="31" Click="buttonExit_Click" ToolTip="EXIT THAT WINDOW" Style="{StaticResource stylKlawiszy}"/>
         <CheckBox Content="Tkanka" HorizontalAlignment="Left" Margin="269,234,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtboxWeight" HorizontalAlignment="Left" Height="23" Margin="144,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtboxWeight_TextChanged"/>
-        <TextBox x:Name="txtboxHeight" HorizontalAlignment="Left" Height="23" Margin="144,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtboxHeight_TextChanged"/>
-        <TextBox x:Name="txtboxBodyFat" HorizontalAlignment="Left" Height="23" Margin="144,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtboxBMR" HorizontalAlignment="Left" Height="23" Margin="247,298,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" IsReadOnly="True"/>
-        <TextBox x:Name="txtboxTDEE" HorizontalAlignment="Left" Height="23" Margin="247,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" IsReadOnly="True"/>
-        <ComboBox x:Name="cbxActivity" HorizontalAlignment="Left" Margin="144,189,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxActivity_SelectionChanged"/>
-        <ComboBox x:Name="cbxDiet" HorizontalAlignment="Left" Margin="144,271,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxDiet_SelectionChanged"/>
-        <ComboBox x:Name="cbxSex" HorizontalAlignment="Left" Margin="144,89,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxSex_SelectionChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="52,89,0,0" TextWrapping="Wrap" Text="Płeć" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtboxWeight" HorizontalAlignment="Left" Height="23" Margin="144,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtboxWeight_TextChanged" ToolTip="INPUT YOUR WEIGHT IN KG"/>
+        <TextBox x:Name="txtboxHeight" HorizontalAlignment="Left" Height="23" Margin="144,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtboxHeight_TextChanged" ToolTip="INPUT YOUR HEIGHT IN CM"/>
+        <TextBox x:Name="txtboxBodyFat" HorizontalAlignment="Left" Height="23" Margin="144,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" ToolTip="INPUT YOUR BODYFAT"/>
+        <TextBox x:Name="txtboxBMR" HorizontalAlignment="Left" Height="23" Margin="247,298,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" IsReadOnly="True" ToolTip="BASIC METABOLIC RATIO OF CALORIES"/>
+        <TextBox x:Name="txtboxTDEE" HorizontalAlignment="Left" Height="23" Margin="247,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" IsReadOnly="True" ToolTip="TOTAL DAILY ENERGY EXPENDITURE OF CALORIES"/>
+        <ComboBox x:Name="cbxActivity" HorizontalAlignment="Left" Margin="144,189,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxActivity_SelectionChanged" ToolTip="SELECT YOUR ACTIVITY LEVEL"/>
+        <ComboBox x:Name="cbxDiet" HorizontalAlignment="Left" Margin="144,271,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxDiet_SelectionChanged" ToolTip="SELECT YOUR TARGET"/>
+        <ComboBox x:Name="cbxSex" HorizontalAlignment="Left" Margin="144,89,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbxSex_SelectionChanged" ToolTip="SELECT DESIRED SEX"/>
     </Grid>
 </Window>
