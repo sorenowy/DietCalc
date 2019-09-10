@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using DietCalc.Configuration;
 using DietCalc.Data;
 using DietCalc.Connection;
+using DietCalc.Logs;
 
 namespace DietCalc
 {
@@ -26,21 +27,35 @@ namespace DietCalc
         public MainWindow()
         {
             InitializeComponent();
-            
+            mainMenuImage.Source = MenuParameters.imageMenu;
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void buttonCaloriesCalc_Click(object sender, RoutedEventArgs e)
         {
-            CaloriesCalculatorWindow calcWin = new CaloriesCalculatorWindow();
-            calcWin.ShowDialog();
+            try
+            {
+                CaloriesCalculatorWindow calcWin = new CaloriesCalculatorWindow();
+                calcWin.ShowDialog();
+                LogWriter.LogWrite("Opened the calorie calculator window.");
+            }
+            catch (Exception calerr)
+            {
+                LogWriter.LogWrite(calerr.ToString());
+            }
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void buttonMacro_Click(object sender, RoutedEventArgs e)
         {
-            MacroCalculatorWindow macroWin = new MacroCalculatorWindow();
-            macroWin.ShowDialog();
+            try
+            {
+                MacroCalculatorWindow macroWin = new MacroCalculatorWindow();
+                macroWin.ShowDialog();
+                LogWriter.LogWrite("Opened the macros calculator window.");
+            }
+            catch (Exception f)
+            {
+                LogWriter.LogWrite(f.ToString());
+            }
         }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void buttonHistory_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -48,14 +63,15 @@ namespace DietCalc
                 DietHistoryWindow dietWin = new DietHistoryWindow();
                 localCon.InitializeConnection();
                 dietWin.ShowDialog();
+                LogWriter.LogWrite("Opened the macros calculator window.");
             }
             catch (Exception g)
             {
                 MessageBox.Show(g.Message);
+                LogWriter.LogWrite(g.ToString());
             }
         }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void buttonClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

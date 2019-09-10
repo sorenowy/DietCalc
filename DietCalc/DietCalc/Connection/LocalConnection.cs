@@ -26,11 +26,11 @@ namespace DietCalc.Connection
             {
                 connection.Open();
                 sqlcommand.Parameters.AddWithValue("@Name", LocalParameters.username);
-                sqlcommand.Parameters.AddWithValue("@Bmr", LocalParameters.BMRAmount);
-                sqlcommand.Parameters.AddWithValue("@Tdee", LocalParameters.TDEEAmount);
-                sqlcommand.Parameters.AddWithValue("@Protein", LocalParameters.proteinAmount);
-                sqlcommand.Parameters.AddWithValue("@Carbs", LocalParameters.carbsAmount);
-                sqlcommand.Parameters.AddWithValue("@Fats", LocalParameters.fatsAmount);
+                sqlcommand.Parameters.AddWithValue("@Bmr", Math.Round(LocalParameters.BMRAmount,2));
+                sqlcommand.Parameters.AddWithValue("@Tdee", Math.Round(LocalParameters.TDEEAmount,2));
+                sqlcommand.Parameters.AddWithValue("@Protein", Math.Round(LocalParameters.proteinAmount,2));
+                sqlcommand.Parameters.AddWithValue("@Carbs", Math.Round(LocalParameters.carbsAmount,2));
+                sqlcommand.Parameters.AddWithValue("@Fats", Math.Round(LocalParameters.fatsAmount,2));
                 sqlcommand.Parameters.AddWithValue("@DateT", DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
                 sqlcommand.ExecuteNonQuery();
             }

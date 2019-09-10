@@ -55,6 +55,48 @@ namespace DietCalc.Data
                     goto case "Male";
             }
         }
+        private void CbxActivity_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _activityType = Convert.ToString(cbxActivity.SelectedItem);
+            switch (_activityType)
+            {
+                case "Sedentary":
+                    caloriesCalc.SelectActivityFactor(cbxActivity.SelectedIndex);
+                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                    break;
+                case "Light Activity 1-2days/week":
+                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                    goto case "Sedentary";
+                case "Moderate Activity 3-5d/week":
+                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                    goto case "Sedentary";
+                case "Heavy Activity 5d+/week":
+                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                    goto case "Sedentary";
+                case "Athlete - 2x/day":
+                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                    goto case "Sedentary";
+            }
+        }
+        private void CbxDiet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _targetType = Convert.ToString(cbxDiet.SelectedItem);
+            switch (_targetType)
+            {
+                case "Bulk +10%":
+                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
+                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount + LocalParameters.targetFactor, 2));
+                    break;
+                case "Maintain/Recompose +0%":
+                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
+                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount + LocalParameters.targetFactor, 2));
+                    break;
+                case "Cut -15%":
+                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
+                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount - LocalParameters.targetFactor, 2));
+                    break;
+            }
+        }
         private void TxtboxAge_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
@@ -143,49 +185,7 @@ namespace DietCalc.Data
                 MessageBox.Show(g.Message);
             }
         }
-        private void CbxActivity_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            _activityType = Convert.ToString(cbxActivity.SelectedItem);
-            switch (_activityType)
-            {
-                case "Sedentary":
-                    caloriesCalc.SelectActivityFactor(cbxActivity.SelectedIndex);
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount,2));
-                    break;
-                case "Light Activity 1-2days/week":
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    goto case "Sedentary";
-                case "Moderate Activity 3-5d/week":
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    goto case "Sedentary";
-                case "Heavy Activity 5d+/week":
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    goto case "Sedentary";
-                case "Athlete - 2x/day":
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
-                    goto case "Sedentary";
-            }
-        }
-        private void CbxDiet_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            _targetType = Convert.ToString(cbxDiet.SelectedItem);
-            switch (_targetType)
-            {
-                case "Bulk +10%":
-                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount+LocalParameters.targetFactor,2));
-                    break;
-                case "Maintain/Recompose +0%":
-                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount+LocalParameters.targetFactor,2));
-                    break;
-                case "Cut -15%":
-                    caloriesCalc.SelectTargetFactor(cbxDiet.SelectedIndex);
-                    txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount-LocalParameters.targetFactor,2));
-                    break;
-            }
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             if (cbxDiet.SelectedIndex == 0)
@@ -198,7 +198,7 @@ namespace DietCalc.Data
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void buttonExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             LocalParameters.RestoreParameters();
