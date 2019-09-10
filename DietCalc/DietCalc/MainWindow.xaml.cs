@@ -28,6 +28,7 @@ namespace DietCalc
         {
             InitializeComponent();
             mainMenuImage.Source = MenuParameters.imageMenu;
+            LogWriter.LogWrite("Program initialized successfully");
         }
         private void buttonCaloriesCalc_Click(object sender, RoutedEventArgs e)
         {
@@ -74,6 +75,8 @@ namespace DietCalc
         private void buttonClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            MessageBox.Show("Thanks for using DietCalc 2019.", "ByeBye");
+            LogWriter.LogWrite("Program Closed.");
         }
     }
 }

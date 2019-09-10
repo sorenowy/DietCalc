@@ -12,7 +12,6 @@ namespace DietCalc.Configuration
     internal static class MenuParameters
     {
         internal static DataTable dietList = new DataTable();
-
         internal static CaloriesCalculator caloriesCalc = null;
         internal static MacroCalculator macroCalc = null;
         internal static BitmapImage imageMenu = new BitmapImage(new Uri(Environment.CurrentDirectory + @"\Images\image.jpg"));

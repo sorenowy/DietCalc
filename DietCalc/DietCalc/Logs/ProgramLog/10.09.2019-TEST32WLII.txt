@@ -1,0 +1,142 @@
+
+10.09.2019,12:02:25,Program initialized successfully
+
+10.09.2019,13:49:26,Program initialized successfully
+
+10.09.2019,13:49:30,Loaded Custom, to calculation
+
+10.09.2019,13:49:36,Opened the macros calculator window.
+
+10.09.2019,13:49:54,Program initialized successfully
+
+10.09.2019,13:49:57,Loaded Custom, to calculation
+
+10.09.2019,13:50:01,Opened the macros calculator window.
+
+10.09.2019,13:51:10,Program initialized successfully
+
+10.09.2019,13:51:13,Loaded Custom, to calculation
+
+10.09.2019,13:51:15,Opened the macros calculator window.
+
+10.09.2019,13:52:23,Program initialized successfully
+
+10.09.2019,13:52:26,Loaded Custom, to calculation
+
+10.09.2019,13:52:30,Opened the macros calculator window.
+
+10.09.2019,13:54:59,Program initialized successfully
+
+10.09.2019,13:55:02,Loaded Custom, to calculation
+
+10.09.2019,13:55:05,Opened the macros calculator window.
+
+10.09.2019,13:55:26,Program initialized successfully
+
+10.09.2019,13:55:28,Loaded Custom, to calculation
+
+10.09.2019,13:55:31,Opened the macros calculator window.
+
+10.09.2019,13:55:32,Program Closed.
+
+10.09.2019,13:57:42,Program initialized successfully
+
+10.09.2019,13:57:46,Loaded Custom, to calculation
+
+10.09.2019,13:57:53,Opened the macros calculator window.
+
+10.09.2019,14:00:04,Program initialized successfully
+
+10.09.2019,14:00:20,Opened the calorie calculator window.
+
+10.09.2019,14:00:23,Loaded Custom, to calculation
+
+10.09.2019,14:00:40,Opened the macros calculator window.
+
+10.09.2019,14:06:58,Program initialized successfully
+
+10.09.2019,14:07:07,Opened the calorie calculator window.
+
+10.09.2019,14:07:10,Loaded Custom, to calculation
+
+10.09.2019,14:07:13,Opened the macros calculator window.
+
+10.09.2019,14:10:29,Program initialized successfully
+
+10.09.2019,14:10:32,Loaded Custom, to calculation
+
+10.09.2019,14:10:36,Opened the macros calculator window.
+
+10.09.2019,14:11:49,Program initialized successfully
+
+10.09.2019,14:11:52,Loaded Custom, to calculation
+
+10.09.2019,14:11:55,Opened the macros calculator window.
+
+10.09.2019,14:14:40,Program initialized successfully
+
+10.09.2019,14:14:43,Loaded Custom, to calculation
+
+10.09.2019,14:14:45,Opened the macros calculator window.
+
+10.09.2019,14:15:22,Program initialized successfully
+
+10.09.2019,14:17:54,Program initialized successfully
+
+10.09.2019,14:18:03,Opened the calorie calculator window.
+
+10.09.2019,14:18:17,Program initialized successfully
+
+10.09.2019,14:18:25,Opened the calorie calculator window.
+
+10.09.2019,14:18:27,Loaded Custom, to calculation
+
+10.09.2019,14:18:34,Added to SQLite DB.
+
+10.09.2019,14:18:34,Opened the macros calculator window.
+
+10.09.2019,14:18:34,Loaded DataTable from SQL, to Grid
+
+10.09.2019,14:18:38,Opened the macros calculator window.
+
+10.09.2019,14:19:10,Program initialized successfully
+
+10.09.2019,14:19:20,Opened the calorie calculator window.
+
+10.09.2019,14:19:22,Loaded Custom, to calculation
+
+10.09.2019,14:19:31,Added to SQLite DB.
+
+10.09.2019,14:19:31,Opened the macros calculator window.
+
+10.09.2019,14:19:31,Loaded DataTable from SQL, to Grid
+
+10.09.2019,14:19:33,Opened the macros calculator window.
+
+10.09.2019,14:21:18,Program initialized successfully
+
+10.09.2019,14:21:22,Loaded Custom, to calculation
+
+10.09.2019,14:21:27,Opened the macros calculator window.
+
+10.09.2019,14:22:00,Program initialized successfully
+
+10.09.2019,14:22:14,Opened the calorie calculator window.
+
+10.09.2019,14:22:16,Loaded Custom, to calculation
+
+10.09.2019,14:22:41,Opened the macros calculator window.
+
+10.09.2019,14:24:43,Program initialized successfully
+
+10.09.2019,14:24:46,Loaded Custom, to calculation
+
+10.09.2019,14:24:50,Opened the macros calculator window.
+
+10.09.2019,14:25:08,Program initialized successfully
+
+10.09.2019,14:26:28,Program initialized successfully
+
+10.09.2019,14:26:31,Loaded Custom, to calculation
+
+10.09.2019,14:26:53,Opened the macros calculator window.

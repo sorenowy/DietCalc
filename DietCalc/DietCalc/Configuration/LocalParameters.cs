@@ -9,7 +9,7 @@ namespace DietCalc.Configuration
     internal static class LocalParameters
     {
         internal static string username { get; set; }
-        internal static string logPath = Environment.CurrentDirectory + @"\Logs\ProgramLog";
+        internal static string logPath = Environment.CurrentDirectory + @"\Logs\ProgramLog\";
         internal static string DBPath = "Data Source=" + Environment.CurrentDirectory + @"\Connection\DietDatabase.db";
         internal static double maleFactor = 5;
         internal static double femaleFactor = -161;
@@ -27,6 +27,7 @@ namespace DietCalc.Configuration
         internal static double targetFactor { get; set; }
         internal static double BMRAmount { get; set; }
         internal static double TDEEAmount { get; set; }
+        internal static double MacroPercentage { get; set; }
         internal static void RestoreParameters()
         {
             proteinAmount = 0;
