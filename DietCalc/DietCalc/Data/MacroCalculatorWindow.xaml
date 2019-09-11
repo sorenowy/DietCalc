@@ -60,6 +60,6 @@
         <Slider x:Name="sliderFats" HorizontalAlignment="Left" Margin="190,187,0,0" VerticalAlignment="Top" Width="91" Maximum="500" ValueChanged="SliderFats_ValueChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="52,217,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
         <TextBox x:Name="txtBoxPercent"  HorizontalAlignment="Left" Height="23" Margin="303,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48"/>
-        <TextBlock HorizontalAlignment="Left" Margin="303,123,0,0" TextWrapping="Wrap" Text="Percent" VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="303,103,0,0" TextWrapping="Wrap" Text="Acutal Cals." VerticalAlignment="Top" Style="{StaticResource stylTextBlock}"/>
     </Grid>
 </Window>

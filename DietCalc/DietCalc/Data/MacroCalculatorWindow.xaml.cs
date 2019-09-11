@@ -124,6 +124,8 @@ namespace DietCalc.Data
             {
                 this.Close();
                 LocalParameters.username = txtBoxName.Text;
+                PDFPrinter pdfPrint = new PDFPrinter();
+                pdfPrint.PrintPDF();
                 localCon.LocalAddRecord();
                 LocalParameters.RestoreParameters();
                 LogWriter.LogWrite("Added to SQLite DB.");

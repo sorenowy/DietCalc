@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DietCalc.Configuration;
 using DietCalc.Data;
 using DietCalc.Connection;
@@ -26,9 +14,18 @@ namespace DietCalc
     {
         public MainWindow()
         {
-            InitializeComponent();
-            mainMenuImage.Source = MenuParameters.imageMenu;
-            LogWriter.LogWrite("Program initialized successfully");
+            try
+            {
+                MessageBox.Show("Remember to have installed Adobe Reader XI or newer on your PC for program to work properly.", "ABOUT");
+                InitializeComponent();
+                mainMenuImage.Source = MenuParameters.imageMenu;
+                LogWriter.LogWrite("Program initialized successfully");
+            }
+            catch(Exception a)
+            {
+                MessageBox.Show(a.Message);
+                LogWriter.LogWrite(a.ToString());
+            }
         }
         private void buttonCaloriesCalc_Click(object sender, RoutedEventArgs e)
         {

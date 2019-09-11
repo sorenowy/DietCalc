@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows;
 using DietCalc.Configuration;
 
 namespace DietCalc.Data
@@ -57,6 +53,10 @@ namespace DietCalc.Data
         public void Calculate()
         {
             LocalParameters.MacroPercentage = LocalParameters.proteinAmount * 4 + LocalParameters.carbsAmount * 4 + LocalParameters.fatsAmount * 9;
+            if (LocalParameters.MacroPercentage >= LocalParameters.TDEEAmount)
+            {
+                MessageBox.Show("You overextended your calorie demand, please step down a little bit with Protein, Carbs or fats.");
+            }
         }
     }
 }

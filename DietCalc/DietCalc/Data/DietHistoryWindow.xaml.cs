@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using DietCalc.Configuration;
-using DietCalc.Connection;
+
 
 namespace DietCalc.Data
 {
@@ -23,8 +12,16 @@ namespace DietCalc.Data
     {
         public DietHistoryWindow()
         {
-            InitializeComponent();
-            gridTable.ItemsSource = MenuParameters.dietList.DefaultView;
+            try
+            {
+                InitializeComponent();
+                gridTable.ItemsSource = MenuParameters.dietList.DefaultView;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                MessageBox.Show(e.ToString());
+            }
         }
 
         private void buttonClose_Click(object sender, RoutedEventArgs e)

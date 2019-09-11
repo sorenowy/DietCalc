@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using DietCalc.Configuration;
-using DietCalc.Data;
 using DietCalc.Logs;
 
 namespace DietCalc.Data
@@ -25,7 +14,7 @@ namespace DietCalc.Data
         private string _sexType;
         private string _activityType;
         private string _targetType;
-        CaloriesCalculator caloriesCalc = new CaloriesCalculator();
+        CaloriesCalculator caloriesCalc;
         public CaloriesCalculatorWindow()
         {
             try
@@ -60,6 +49,13 @@ namespace DietCalc.Data
                     case "Male":
                         caloriesCalc.SelectSexFactor(cbxSex.SelectedIndex);
                         txtboxBMR.Text = Convert.ToString(Math.Round(LocalParameters.BMRAmount, 2));
+                        if (cbxActivity.SelectedIndex >= 0)
+                        {
+                            caloriesCalc.SelectSexFactor(cbxSex.SelectedIndex);
+                            caloriesCalc.CalculateDailyCal();
+                            txtboxBMR.Text = Convert.ToString(Math.Round(LocalParameters.BMRAmount, 2));
+                            txtboxTDEE.Text = Convert.ToString(Math.Round(LocalParameters.TDEEAmount, 2));
+                        }
                         break;
                     case "Female":
                         goto case "Male";
@@ -218,6 +214,14 @@ namespace DietCalc.Data
                 MessageBox.Show("Please use numeric values to estimate CALORIES!");
             }
         }
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            txtboxBodyFat.Visibility = Visibility.Visible;
+        }
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtboxBodyFat.Visibility = Visibility.Hidden;
+        }
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -231,11 +235,14 @@ namespace DietCalc.Data
             }
             LogWriter.LogWrite("Added calories to memory");
         }
-
         private void buttonExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             LocalParameters.RestoreParameters();
+        }
+        private void TxtboxBodyFat_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
